@@ -73,9 +73,9 @@ paascloud:
       expiredRemainMinutes: 20
       expiredMinutes: 120
   mail:
-    host: smtp.qq.com
-    username: 2623604881@qq.com
-    password: bingbing24551312
+    host: smtp.sina.com
+    username: binbin8124@sina.com
+    password: bingbing336336
     test-connection: false
     properties:
       mail:
