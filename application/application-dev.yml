@@ -23,51 +23,28 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://root:root@paascloud-eureka:8761/eureka/
-paascloud:
+      defaultZone: http://root:root@shopping-eureka:8761/eureka/
+shopping:
   server:
     eureka:
       port: 8761
-      hostname: paascloud-eureka
-      serviceUrl: http://root:root@paascloud-eureka:8761/eureka/
+      hostname: shopping-eureka
+      serviceUrl: http://root:root@shopping-eureka:8761/eureka/
     discovery:
       port: 8080
-      hostname: paascloud-discovery
-      serviceUrl: http://admin:admin@paascloud-discovery:8080
+      hostname: shopping-discovery
+      serviceUrl: http://admin:admin@shopping-discovery:8080
     gateway:
       port: 80
-      hostname: paascloud-gateway
+      hostname: shopping-gateway
     monitor:
       port: 8010
-      hostname: paascloud-monitor
-      serviceUrl: http://paascloud-monitor:8010
-    zipkin:
-      port: 8020
-      hostname: paascloud-zipkin
-      serviceUrl: http://paascloud-zipkin:8020
-    provider:
-      ehc:
-        port: 8040
-        hostname: paascloud-provider-ehc
-      mdc:
-        port: 8030
-        hostname: paascloud-provider-mdc
-      omc:
-        port: 8050
-        hostname: paascloud-provider-omc
-      opc:
-        port: 8070
-        hostname: paascloud-provider-opc
-      ptc:
-        port: 8060
-        hostname: paascloud-provider-ptc
-      uac:
-        port: 8000
-        hostname: paascloud-provider-uac
+      hostname: shopping-monitor
+      serviceUrl: http://shopping-monitor:8010
     web:
       mall:
         port: 9000
-        hostname: paascloud-web-mall
+        hostname: shopping-web-mall
   auth:
     jwt:
       expiredRemainMinutes: 20
@@ -85,29 +62,3 @@ paascloud:
           starttls:
             enable: true
             required: true
-  aliyun:
-    key:
-      accessKeyId: 'your aliyun accessKeyId'
-      accessKeySecret: 'your aliyun accessKeySecret'
-    rocketMq:
-      namesrvAddr: 47.96.173.142:9876
-    sms:
-      signName: 快乐学习网
-      regionId: cn-beijing
-      endpoint:
-      endpointName: cn-beijing
-      product: 'your sms product'
-      domain: dysmsapi.aliyuncs.com
-  qiniu:
-    key:
-      accessKey: 'your qiniu accessKey'
-      secretKey: 'your qiniu secretKey'
-    oss:
-      privateHost: 'your qiniu oss private host'
-      publicHost: 'your qiniu oss public host'
-  alipay:
-    callback:
-      url: http://dev-api.paascloud.net/omc/pay/alipayCallback
-    qrCode:
-      pcPath: E:/File/alipay/QRCode
-      qiniuPath: alipay/QRCode/
